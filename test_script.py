@@ -12,7 +12,12 @@ test_data_2 = np.array([[1,4],[-6,-8],[3,3],[-15,-11],[5,1],
                         [-9,-11],[8,6],[2,-2],[0,0],[12,13],
                         [10,8],[6,10],[-3,-5],[-1,-1],[-4,-9]])
 
-Z = test_data_1
+
+test_data = np.array([[0,0],[2,1],[4,2],[6,3],[-1,2],
+                        [1,-2],[-2,-1],[-4,-2],[-6,-3]])
+
+# Z = test_data_1
+Z = test_data
 
 cov = pca.compute_covariance_matrix(Z)
 pcs,L = pca.find_pcs(cov)
