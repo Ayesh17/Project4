@@ -15,8 +15,26 @@ def find_pcs(cov):
 
     # Calculating Eigenvalues and Eigenvectors of the covariance matrix
     eigen_values, eigen_vectors = np.linalg.eig(cov)
+
+    n = len(eigen_values)
+    indexes = eigen_values.argsort()[::-1][:n]
+
+    eigen_values_sorted = np.empty(shape= len(eigen_values))
+    eigen_vectors_sorted = np.empty(shape= (len(eigen_vectors), len(eigen_vectors[0])))
+    print("indexes", indexes)
+    for i in range(len(indexes)):
+        print(indexes[i])
+        print(eigen_values[indexes[i]])
+        eigen_values_sorted[i] = eigen_values[indexes[i]]
+        eigen_vectors_sorted[i] = eigen_vectors[indexes[i]]
+
+
     print("val",eigen_values)
     print("vect",eigen_vectors)
+
+    print("indexes", indexes)
+    print("val_sorted", eigen_values_sorted)
+    print("vect_sorted", eigen_vectors_sorted)
 
     return eigen_vectors, eigen_values
 
