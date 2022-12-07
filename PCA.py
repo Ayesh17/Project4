@@ -67,8 +67,8 @@ def show_plot(Z, Z_star):
     for i in range(len(Z)):
         ZX[i] = Z[i][0]
         ZY[i] = Z[i][1]
-    print("ZX",ZX)
-    print("ZY",ZY)
+    # print("ZX",ZX)
+    # print("ZY",ZY)
     plt.scatter(ZX, ZY, color="blue")
 
     Z_star_y = np.zeros((len(Z_star)))
