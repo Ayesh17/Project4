@@ -4,6 +4,18 @@ import matplotlib.pyplot as plt
 
 #getting the covariance matrix
 def compute_covariance_matrix(Z):
+    print("Z",Z)
+    mean = np.mean(Z, axis=0)
+    print("mean", mean)
+    Z_standardized = np.zeros([len(Z),2])
+    for i in range(len(Z)):
+        for j in range(len(Z[i])):
+            Z_standardized[i][j] =  Z[i][j] - mean[j]
+
+    print("st", Z_standardized)
+    # ZT = np.transpose(Z)
+    # cov = np.matmul(ZT, Z)
+
     ZT = np.transpose(Z)
     cov = np.matmul(ZT, Z)
     print(cov)
@@ -59,7 +71,9 @@ def show_plot(Z, Z_star):
     print("ZY",ZY)
     plt.scatter(ZX, ZY, color="blue")
 
-    plt.plot(Z_star, color="black")
+    Z_star_y = np.zeros((len(Z_star)))
+    plt.plot(Z_star, Z_star_y, color="black")
+    #plt.plot(Z_star,  color="red")
     plt.show()
     return 0
 
