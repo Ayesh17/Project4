@@ -22,4 +22,4 @@ Z = test_data_1
 cov = pca.compute_covariance_matrix(Z)
 pcs,L = pca.find_pcs(cov)
 Z_star = pca.project_data(Z, pcs, L)
-# pca.show_plot(Z, Z_star)
+pca.show_plot(Z, Z_star)
